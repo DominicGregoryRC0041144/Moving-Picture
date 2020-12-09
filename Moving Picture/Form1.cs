@@ -34,12 +34,19 @@ namespace Moving_Picture
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 5); 
+             if (pictureBox1.Location.Y > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 5);
+            }
+                
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 5);
+            if (pictureBox1.Location.Y + 5 < ClientRectangle.Height - pictureBox1.Height)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 5);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
